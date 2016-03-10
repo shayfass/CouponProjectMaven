@@ -7,7 +7,7 @@ import facades.*;
 public class Main
 {
 	public static void main(String[] args) throws Exception
-	{	
+	{
 		// Prepare facades
 		CustomerFacade custFacade = new CustomerFacade();
 		CompanyFacade compFacade = new CompanyFacade();
