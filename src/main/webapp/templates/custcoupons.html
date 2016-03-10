@@ -1,0 +1,59 @@
+<!-- Adminlogin.html -->
+<div class="container">
+   <div id="header">
+<h1>view all customer coupons</h1>
+</div>
+
+		<div ng-controller="customerController" ng-init="viewAllcustomercoupons()">
+			<input type="button" class="btn btn-primary"  value="refresh" ng-click="viewAllcustomercoupons()" />
+
+			<table boder="10" st-table="rowCollection" class="table table-striped">
+				<thead>
+				<tr>
+				<th>title</th>
+					<th>id</th>
+					<th>amount</th>
+					<th>endDate</th>
+					<th>startDate</th>
+					<th>price</th>
+					<th>message</th>
+					<th>type</th>
+					<th>image</th>
+					</tr>
+					</thead>
+					<tbody>
+				<tr ng-repeat="coupon in custcoupons.coupon">
+					<td>{{coupon.title}}</td>
+					<td>{{coupon.id}}</td>
+					<td>{{coupon.amount}}</td>
+					<td>{{coupon.endDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.startDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.price}}</td>
+					<td>{{coupon.message}}</td>
+					<td>{{coupon.type}}</td>
+										<td><img src="{{coupon.image}}" class="img-thumbnail" alt="Cinque Terre" width="300" height="300" aligh="right"></td>
+
+					
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<input	type="button" class="btn btn-success"  value="refresh page"  onclick="myFunction1()" />
+    <a href="#/CustomerPage"class="btn btn-success"> Back to customer</a>
+    <style>
+#header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+</style>
+</div>

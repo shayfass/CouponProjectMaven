@@ -1,0 +1,18 @@
+
+
+<div ng-controller ="uploadImage">
+
+<h1>{{coupon.title}}</h1>
+<br>
+<h2>Currnet image: </h2>
+<br>
+<img src="{{coupon.image}}" style="max-width: 500px; max-height: 500px;"/>
+  <form>	
+   <input type='file' id="fileInput" file-model='file' class='custom-file-input' accept="image/*" onchange="validateFile(this)">
+   <input type='button' id="uploadBTN" ng-click="show()" value="Upload" class="btn btn-primary" disabled="true" />
+   <span id="error" style="visibility:hidden; color: red;font-style: italic;">File is not allowed, try jpg or png format.</span>   
+   <div class="feedback" ng-init="result=''">{{result}}</div> 
+      
+  </form>  
+
+</div>

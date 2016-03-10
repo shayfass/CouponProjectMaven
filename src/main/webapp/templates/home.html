@@ -1,0 +1,64 @@
+<div class="container">
+  <div id="header">
+<h1>Login Page</h1>
+</div>
+		<div ng-controller="loginController" id="nav" >
+			<table>
+
+				<tr>
+					<td align="right"></td>
+					<label for="user">choose  client type :</label>
+					<td><select ng-model="type" value="admin" class="form-control">
+							<option value="admin">admin</option>
+							<option value="company">company</option>
+							<option value="customer">customer</option>
+					</select></td>
+				</tr>
+			</table>
+			<div class="form-group">
+  <label for="user">Name:</label>
+  <input type="text" ng-model="user" class="form-control" id="user">
+</div>
+<div class="form-group">
+  <label for="pwd">Password:</label>
+  <input type="password" ng-model="pass" class="form-control" id="pass">
+</div>
+			
+			<input type="button" class="btn btn-primary" value="login" ng-click="login()" /><br />
+		
+			
+  
+		</div>
+		<img src="home.jpg" class="img-thumbnail" alt="Cinque Terre" width="500" height="500" aligh="right">
+		
+		<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:lightblue;
+    height:150px;
+    width:400px;
+    float:left;
+    padding:5px; 
+}
+#section {
+    width:300px;
+    float:left;
+    padding:10px; 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:10px; 
+}
+</style>
+		
+    
+</div>

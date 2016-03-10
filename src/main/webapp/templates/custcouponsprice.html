@@ -1,0 +1,103 @@
+<!-- Adminlogin.html -->
+<div class="container">
+	<div id="header">
+		<h1>view all customer coupons BY:</h1>
+	</div>
+	<h1>price</h1>
+	<div ng-controller="customerController" id="nav">
+		price<input type="text" ng-model="price"><br /> <input
+			type="button" class="btn btn-primary" value="view all coupons by price"
+			ng-click="getcoupbyprice()" />
+		<table boder="10" st-table="rowCollection" class="table table-striped">
+			<thead>
+				<tr>
+					<th>title</th>
+					<th>id</th>
+					<th>amount</th>
+					<th>endDate</th>
+					<th>startDate</th>
+					<th>price</th>
+					<th>message</th>
+					<th>type</th>
+					<th>image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="coupon in getcoup.coupon">
+					<td>{{coupon.title}}</td>
+					<td>{{coupon.id}}</td>
+					<td>{{coupon.amount}}</td>
+					<td >{{coupon.endDate| date:'yyyy-MM-dd'}} </td>
+					<td>{{coupon.startDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.price}}</td>
+					<td>{{coupon.message}}</td>
+					<td>{{coupon.type}}</td>
+										<td><img src="{{coupon.image}}" class="img-thumbnail" alt="Cinque Terre" width="300" height="300" aligh="right"></td>
+					
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<div ng-controller="customerController" id="nav" >
+
+		<h1>TYPE</h1>
+		<select ng-model="type" ng-change="getcoupbyTYPE()">
+		<option ng-repeat="x in types">{{x.value}}</option>
+	</select>type
+		<table boder="10" st-table="rowCollection" class="table table-striped">
+			<thead>
+				<tr>
+					<th>title</th>
+					<th>id</th>
+					<th>amount</th>
+					<th>endDate</th>
+					<th>startDate</th>
+					<th>price</th>
+					<th>message</th>
+					<th>type</th>
+					<th>image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="coupon in getcoupTYPE.coupon">
+					<td>{{coupon.title}}</td>
+					<td>{{coupon.id}}</td>
+					<td>{{coupon.amount}}</td>
+					<td>{{coupon.endDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.startDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.price}}</td>
+					<td>{{coupon.message}}</td>
+					<td>{{coupon.type}}</td>
+															<td><img src="{{coupon.image}}" class="img-thumbnail" alt="Cinque Terre" width="300" height="300" aligh="right"></td>
+					
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+<input	type="button" class="btn btn-success"  value="refresh page"  onclick="myFunction1()" />
+	<a href="#/CustomerPage" class="btn btn-success"> Back to customer</a>
+	<style>
+#header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+
+</style>
+</div>

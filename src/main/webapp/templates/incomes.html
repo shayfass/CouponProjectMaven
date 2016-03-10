@@ -1,0 +1,49 @@
+<!-- Adminlogin.html -->
+<div class="container">
+	<div id="header">
+		<h1>incomes</h1>
+	</div>
+
+
+	<h1>view all incomes</h1>
+
+	<div ng-controller="adminController">
+		<input type="button" class="btn btn-primary" value="view All Income"
+			ng-click="viewAllIncome()" /><br /> {{$scope.allincome}}
+
+	</div>
+
+	<div ng-controller="adminController">
+
+		<h1>view company income</h1>
+		<input type="text" ng-model="id">id<br /> <input
+			type="button" class="btn btn-primary" value="view company Income"
+			ng-click="viewCompanyIncome()" /><br /> {{$scope.companyincome}}
+
+	</div>
+	<h1>view customer income</h1>
+	<div ng-controller="adminController" id="nav" align="left">
+		<input type="text" ng-model="id">id<br /> <input
+			type="button" class="btn btn-primary" value="view customer Income"
+			ng-click="viewCustomerIncome()" /><br /> {{$scope.customerincome}}
+	</div>
+</div>
+
+<a href="#/adminPage" class="btn btn-success"> Back to admin</a>
+<style type="text/css">
+#header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+</style>
+</div>

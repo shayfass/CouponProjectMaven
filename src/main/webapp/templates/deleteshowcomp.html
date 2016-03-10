@@ -1,0 +1,91 @@
+<!-- Adminlogin.html -->
+<div class="container">
+	<div id="header">
+		<h1>display company</h1>
+	</div>
+
+
+	<h1>view all companies</h1>
+
+	<p>
+		filter by id<input type="text" ng-model="id" size="1">
+	</p>
+	<div ng-controller="adminController" id="nav" ng-init="viewAll()">
+		<input type="button"class="btn btn-primary"   value="refresh" ng-click="viewAll()" /><br />
+		
+
+
+		<table boder="20" st-table="rowCollection" class="table table-striped">
+			<thead>
+				<tr>
+
+					<th>id</th>
+					<th>company name</th>
+					<th>password</th>
+					<th>email</th>
+					
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					ng-repeat="company in companies.company  |filter:id"">
+					<td>{{company.id}}</td>
+					<td>{{company.compName}}</td>
+					<td>{{company.password}}</td>
+					<td>{{company.email}}</td>
+					
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<div ng-controller="adminController" id="section" >
+
+		<h1>delete company</h1>
+<form id="myForm">
+		company id<input type="text" ng-model="id" size="1"><br />
+		
+</form>
+		 <input	type="button" class="btn btn-primary"  value="delete company" ng-click="erase()" onclick="myFunction()" />
+		 	<input	type="button" class="btn btn-primary"  value="delete another"  onclick="myFunction1()" /><br />
+	</div>
+	<h1>update company</h1>
+	<div ng-controller="adminController" id="nav" align="left">
+	<form id="myForm1">
+			<input type="text" ng-model="id" >id<br />
+			 <input type="text" ng-model="mail">mail<br />
+			 <input type="text" ng-model="pass">pass <br />
+			 </form>
+			<input type="button" class="btn btn-primary"  value="update company" ng-click="update() " onclick="myFunction()"/>
+	<input	type="button" class="btn btn-primary"  value="update another"  onclick="myFunction1()" /><br /> 	
+		</div>
+</div>
+ <input	type="button" class="btn btn-success"  value="refresh page"  onclick="myFunction1()" />
+<a href="#/adminPage" class="btn btn-success"> Back to admin</a>
+<style type="text/css">
+#header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+
+#section {
+    width:300px;
+    float:left;
+    padding:10px; 
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+</style>
+</div>

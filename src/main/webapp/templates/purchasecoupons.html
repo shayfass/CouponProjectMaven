@@ -1,0 +1,64 @@
+<!-- Adminlogin.html -->
+<div class="container">
+	<div id="header">
+		<h2>please insert the coupon details</h2>
+	</div>
+
+	<div ng-controller="customerController" id="nav" align="left">
+		<input type="text" ng-model="id">coupon id to buy<br /> <input
+			type="button" class="btn btn-primary" value="buy coupon" ng-click="purchaseCoupon()" />
+	<input	type="button" class="btn btn-primary"  value="purchase another"  onclick="myFunction1()" /><br />
+		<hr />
+ coupon	</div>
+	<div ng-controller="customerController" ng-init="viewtotalcoupons()">
+	
+
+		<table boder="10" st-table="rowCollection" class="table table-striped">
+			<thead>
+				<tr>
+					<th>title</th>
+					<th>id</th>
+					<th>amount</th>
+					<th>endDate</th>
+					<th>startDate</th>
+					<th>price</th>
+					<th>message</th>
+					<th>type</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="coupon in totalcoupons.coupon">
+					<td>{{coupon.title}}</td>
+					<td>{{coupon.id}}</td>
+					<td>{{coupon.amount}}</td>
+					<td>{{coupon.endDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.startDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.price}}</td>
+					<td>{{coupon.message}}</td>
+					<td>{{coupon.type}}</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<input	type="button" class="btn btn-success"  value="refresh page"  onclick="myFunction1()" />
+	<a href="#/CustomerPage"class="btn btn-success"> Back to customer</a>
+
+	<style>
+#header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+</style>
+</div>
+

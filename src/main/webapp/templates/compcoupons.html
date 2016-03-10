@@ -1,0 +1,148 @@
+<!-- Adminlogin.html -->
+<div class="container">
+	<div id="header">
+		<h1>view all company coupons</h1>
+	</div>
+	<p>
+		filter by id<input type="text" ng-model="id">
+	</p>
+	<div ng-controller="companyController" id="nav"
+		ng-init="viewAllcoupons()">
+		<input type="button" class="btn btn-primary" value="refresh"
+			ng-click="viewAllcoupons()" />
+
+		<table boder="10" st-table="rowCollection" class="table table-striped">
+			<thead>
+				<tr>
+					<th>title</th>
+					<th>id</th>
+					<th>amount</th>
+					<th>endDate</th>
+					<th>startDate</th>
+					<th>price</th>
+					<th>message</th>
+					<th>type</th>
+					<th>image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="coupon in coupons.coupon |filter:id">
+					<td>{{coupon.title}}</td>
+					<td>{{coupon.id}}</td>
+					<td>{{coupon.amount}}</td>
+					<td>{{coupon.endDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.startDate| date:'yyyy-MM-dd'}}</td>
+					<td>{{coupon.price}}</td>
+					<td>{{coupon.message}}</td>
+					<td>{{coupon.type}}</td>
+					<td><img src="{{coupon.image}}" class="img-thumbnail" alt="Cinque Terre" width="300" height="300" aligh="right"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-controller="companyController">
+
+		<h1>delete coupon</h1>
+
+		id<input type="text" ng-model="id"><br /> <input
+			type="button" class="btn btn-primary" value="delete coupon"
+			ng-click="erasecoupon()" /> <input type="button"
+			class="btn btn-primary" value="delete another"
+			onclick="myFunction1()" /><br />
+	</div>
+	<h1>update coupon</h1>
+	<div ng-controller="companyController" id="nav" align="left">
+
+
+		id<input type="text" ng-model="id" size="1"> amount <input
+			type="text" ng-model="amount" size="1">
+
+		<td><select ng-model="endD" size="1">
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+
+		</select></td>/
+		<td><select ng-model="endM" size="1">
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+
+		</select></td>/ </select>
+		</td>
+		<td><select ng-model="endY" size="1">
+				<option value="2015">2015</option>
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2021">2021</option>
+				<option value="2022">2022</option>
+				<option value="2023">2023</option>
+
+
+		</select></td> end date<br /> message <input type="text" ng-model="message">
+		price <input type="text" ng-model="price" size="1"> <br /> <input
+			type="button" class="btn btn-primary" value="update coupon"
+			ng-click="updatecoupon()" /> <input type="button"
+			class="btn btn-primary" value="update another"
+			onclick="myFunction1()" /><br />
+	</div>
+	<input type="button" class="btn btn-success" value="refresh page"
+		onclick="myFunction1()" /> <a href="#/CompanyPage"
+		class="btn btn-success"> Back to company</a>
+	<style>
+#header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+</style>
+</div>
